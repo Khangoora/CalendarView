@@ -61,6 +61,11 @@ extension CalendarView {
         public static var cellSelectedColor         = UIColor.clear
         public static var cellSelectedTextColor     = UIColor.black
         
+        //Dimmed Dates
+        public static var cellDimUnselectableDates  = false
+        public static var cellDimmedBackgroundColor = UIColor.gray
+        public static var cellDimmedTextColor       = UIColor.black
+        
         //Weekend Style
         public static var cellTextColorWeekend      = UIColor(red:1.00, green:0.84, blue:0.65, alpha:1.00)
         
