@@ -130,6 +130,10 @@ extension CalendarView: UICollectionViewDataSource {
             dayCell.eventsCount = 0
         }
         
+        if dayCell.isToday {
+            dayCell.bgView.backgroundColor = CalendarView.Style.cellColorToday
+        }
+        
         if CalendarView.Style.cellDimUnselectableDates {
             if let dateBeingSelected = self.dateFromIndexPath(indexPath) {
                 if let delegate = self.delegate {
