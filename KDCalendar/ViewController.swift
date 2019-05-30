@@ -50,7 +50,7 @@ class ViewController: UIViewController, CalendarViewDataSource, CalendarViewDele
         
         CalendarView.Style.locale                   = Locale(identifier: "en_US")
         
-        CalendarView.Style.timeZone                 = TimeZone(abbreviation: "UTC")!
+        CalendarView.Style.timeZone                 = TimeZone(abbreviation: "PST")! //TimeZone(abbreviation: TimeZone.current.abbreviation()!)!
         
         CalendarView.Style.hideCellsOutsideDateRange = false
         CalendarView.Style.changeCellColorOutsideRange = false

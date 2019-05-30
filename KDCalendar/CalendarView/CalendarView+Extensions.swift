@@ -41,3 +41,25 @@ extension String {
         return String(subString)
     }
 }
+
+extension Date {
+    func isMonthGreaterThanOrEqualTo(date: Date) -> Bool {
+        var calendar = Calendar.current
+        calendar.timeZone = CalendarView.Style.timeZone
+        let firstDateComponents = calendar.dateComponents([.month, .year], from: self)
+        let secondDateComponents = calendar.dateComponents([.month,.year], from: date)
+        
+        guard let firstMonth = firstDateComponents.month, let firstYear = firstDateComponents.year, let secondMonth = secondDateComponents.month, let secondYear = secondDateComponents.year else { return false}
+        return firstYear > secondYear ? true : firstMonth >= secondMonth
+    }
+    
+    func isMonthLessThanOrEqualTo(date: Date) -> Bool {
+        var calendar = Calendar.current
+        calendar.timeZone = CalendarView.Style.timeZone
+        let firstDateComponents = calendar.dateComponents([.month, .year], from: self)
+        let secondDateComponents = calendar.dateComponents([.month,.year], from: date)
+        
+        guard let firstMonth = firstDateComponents.month, let firstYear = firstDateComponents.year, let secondMonth = secondDateComponents.month, let secondYear = secondDateComponents.year else { return false}
+        return firstYear < secondYear ? true : firstMonth <= secondMonth
+    }
+}
