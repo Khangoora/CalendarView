@@ -77,6 +77,7 @@ open class CalendarDayCell: UICollectionViewCell {
                 self.bgView.layer.borderColor = CalendarView.Style.cellBorderColor.cgColor
                 self.bgView.layer.borderWidth = CalendarView.Style.cellBorderWidth
                 self.bgView.backgroundColor = CalendarView.Style.cellColorDefault
+                self.textLabel.textColor = CalendarView.Style.cellTextColorDefault
             }
         }
     }
