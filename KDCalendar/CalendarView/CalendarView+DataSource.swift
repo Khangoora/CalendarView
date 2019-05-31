@@ -136,19 +136,6 @@ extension CalendarView: UICollectionViewDataSource {
             dayCell.bgView.backgroundColor = CalendarView.Style.cellColorToday
         }
         
-        if CalendarView.Style.cellDimUnselectableDates {
-            if let dateBeingSelected = self.dateFromIndexPath(indexPath) {
-                if let delegate = self.delegate {
-                    if !(delegate.calendar(self, canSelectDate: dateBeingSelected)) {
-                        if !(dayCell.isToday){
-                            dayCell.bgView.backgroundColor = CalendarView.Style.cellDimmedBackgroundColor
-                            dayCell.textLabel.textColor = CalendarView.Style.cellDimmedTextColor
-                        }
-                    }
-                }
-            }
-        }
-        
         return dayCell
     }
 }
@@ -183,6 +170,7 @@ extension CalendarView {
         }
         if CalendarView.Style.changeCellColorOutsideRange == true {
             cell.textLabel.textColor = CalendarView.Style.cellTextColorOutsideRange
+            cell.bgView.backgroundColor = CalendarView.Style.cellBackgroundColorOutsideRange
         }
     }
 }
